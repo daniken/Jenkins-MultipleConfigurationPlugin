@@ -1,0 +1,28 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <st:bind var="myItem" value="${it}"/>
+  <j:set var="job" value="${job}"/>
+  
+  	<th>
+
+	${it.checkMap(view.absoluteUrl)}
+	
+	</th>
+
+
+		<input type="submit" value="Select all" onclick="myItem.SelectAll()" />
+		<input type="submit"  value="Deselect all" onclick="myItem.DeselectAll()" />
+		<input type="submit" value="Disable/Enable selected" onclick="myItem.disableJobs()"/>
+		<input type="submit" value="Enable all" onclick="myItem.enableAll()"/>
+		<input type="submit" value="Disable all" onclick="myItem.disableAll()"/>
+		<input type="submit" value="Build selected" onclick="myItem.buildSelected()"/>
+		<input type="submit" value="Build all" onclick="myItem.buildAll()"/>
+		
+		<a href="ConfirmDeleteSelected/">
+		 	<input type="submit" value="Delete selected"/> </a>
+		
+		<a href="ConfirmDeleteAll/">
+			<input type="submit" value="Delete All"/> </a>
+		
+  
+
+</j:jelly>

@@ -1,0 +1,19 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <j:set var="job" value="${job}"/>
+  <st:bind var="myItem" value="${it}"/>
+  
+  
+  
+  
+	  <td>
+	  		${it.fillMap(job)}
+	 		<j:if test="${it.getStatus(job)}">
+	  			<img src="${rootURL}/plugin/multiple-configuration-plugin/images/checked.png" title="${%Deselect job}" border="0" onclick="myItem.mark('${job.fullName}')"/>
+	  		</j:if>
+	 		<j:if test="${!it.getStatus(job)}">
+	  			<img src="${rootURL}/plugin/multiple-configuration-plugin/images/unchecked.png" title="${%Select job}" border="0" onclick="myItem.mark('${job.fullName}')"/>
+	  		</j:if>
+	  		
+	  		
+	  </td>
+  </j:jelly>

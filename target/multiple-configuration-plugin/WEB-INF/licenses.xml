@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='edabogd.jenkins.plugins' artifactId='multiple-configuration-plugin' version='1.5-SNAPSHOT'><l:dependency name='Multiple Configuration Plugin' groupId='edabogd.jenkins.plugins' artifactId='multiple-configuration-plugin' version='1.5-SNAPSHOT' url='http://jenkins-ci.org/plugin/multiple-configuration-plugin/'><l:description>Enables one to configure multiple jobs with one button press</l:description></l:dependency></l:dependencies>

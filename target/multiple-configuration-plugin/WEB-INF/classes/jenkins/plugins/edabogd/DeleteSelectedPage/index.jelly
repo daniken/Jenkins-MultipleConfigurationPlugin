@@ -1,0 +1,39 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+
+	
+	<l:layout>
+		
+		<l:main-panel>
+			<h1>Confirm deletion</h1>
+		  	
+		  	<j:if test="${!it.isListEmpty()}">
+				${%Are you sure you want to delete these items?}
+				<br/>
+				
+				
+					<j:forEach var="job" items="${it.CurrentJobs}">
+						<h4>${job.fullName}</h4>		
+						
+					</j:forEach>	
+					<br/>
+					
+				<f:form>	
+					<input formmethod="post" formaction="configSubmit" type="submit" value="Delete"/>
+				</f:form>
+			</j:if>
+			<j:if test="${it.isListEmpty()}">
+			
+				${%No jobs are selected.}
+				<br/>
+				<f:form>	
+				<input formmethod="post" formaction="configSubmit" type="submit" value="Return to view"/>
+				</f:form>
+				
+			</j:if>
+		</l:main-panel>
+		
+		
+	
+	</l:layout>
+</j:jelly> 
